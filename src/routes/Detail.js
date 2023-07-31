@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import MovieStyle from "../components/Movie.module.css"
 
 const Detail = () => {
 	const {id} = useParams()
@@ -20,15 +21,22 @@ const Detail = () => {
 	return (
 		<div>
 			{loading ? <h1>Loading...</h1> : 
-				<div>
-					<img src={movie.medium_cover_image} alt={movie.title}/>
-					<h2>{movie.title}</h2>
-					<div>{movie.description_intro}</div>
-					<ul>
-						{movie.genres.map(genre => (
-							<li>{genre}</li>
-						))}
-					</ul>
+				<div className={MovieStyle.detailContainer} style={{backgroundImage: `url(`+movie.background_image+')'}}>
+					<div className={MovieStyle.detailMovie}>
+						<div><img src={movie.medium_cover_image} alt={movie.title}/></div>
+						<div className={MovieStyle.rightContents}>
+							<div><h1>{movie.title}</h1></div>
+							<div className={MovieStyle.flex}>
+								<ul className={MovieStyle.genreUl}>
+									{movie.genres.map(genre => (
+										<li className={MovieStyle.genreLi}>{genre}</li>
+									))}
+								</ul>
+								<span>{movie.rating}</span>
+							</div>
+							<div>{movie.description_intro}</div>
+						</div>
+					</div>
 				</div>
 			}
 		</div>

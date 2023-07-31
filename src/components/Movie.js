@@ -1,20 +1,28 @@
 import PropTypes from "prop-types"
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import MovieStyle from "./Movie.module.css"
 
-const Movie = ({id, coverImg, title, summary, genres}) => {
-
+const Movie = ({id, rating, coverImg, title, summary, genres}) => {
+	
 	return (
-		<div>
-          <img src={coverImg} alt={title} />
-          <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
-          <p>{summary}</p>
-          <ul>
-            {genres.map(g => <li key={g}>{g}</li>)}
-          </ul>
-        </div>
+		<div className={MovieStyle.movie}>
+			<img src={coverImg} alt={title} />
+			<div className={MovieStyle.contents}>
+				<h2><Link to={`/movie/${id}`}>{title}</Link></h2>
+				<p>{rating}</p>
+				<p>{summary}</p>
+				<ul className={MovieStyle.genreUl}>
+					{genres.map(g => <li className={MovieStyle.genreLi} key={g}>{g}</li>)}
+				</ul>
+			</div>
+		</div>
+		
 	)
 }
+
+
+
 
 Movie.propTypes = {
 	id: PropTypes.number.isRequired,

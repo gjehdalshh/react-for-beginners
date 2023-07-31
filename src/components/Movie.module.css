@@ -1,0 +1,69 @@
+.homeContainer {
+	display: flex;
+	justify-content: center;
+}
+.homeMovies {
+	display: grid;
+    grid-gap: 100px;
+    grid-template-columns: repeat(2,minmax(400px,1fr));
+    width: 80%;
+    padding: 70px 50px 50px;
+}
+.movie {
+	grid-gap: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3), 0 -6px 16px -6px rgba(0,0,0,.025);
+    color: #adaeb9;
+    color: inherit;
+    display: grid;
+    font-weight: 300;
+    grid-template-columns: minmax(150px,1fr) 2fr;
+    margin-bottom: 70px;
+    padding: 20px;
+    text-decoration: none;
+}
+.contents {
+	padding: 5%;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.genreUl {
+	text-decoration: none;
+    list-style: none;
+    padding: 0px;
+	color: gray;
+	display: flex;
+	margin-right: 5%;
+}
+.genreLi {
+	margin-right: 5px;
+}
+img {
+	box-shadow: 7px 7px 7px darkgray;
+}
+
+.detailContainer {
+	background-size: cover;
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+.detailMovie {
+	background-color: white;
+    margin: auto;
+    padding: 3%;
+    display: flex;
+    width: 50%;
+    height: 50%;
+	border-radius: 1%;
+}
+.rightContents {
+	padding: 0 4%;
+}
+.flex {
+	display: flex;
+	align-items: center;
+}
